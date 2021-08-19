@@ -1,6 +1,6 @@
 spring:
  application:
-  name: servicio-registrar-reserva 
+  name: servicio-registrar-reserva
  datasource:
     database: ${MYSQL_DATABASE:db_springboot_cloud}
     host: ${MYSQL_HOST:localhost}
