@@ -1,12 +1,12 @@
 spring:
  application:
-  name: servicio-registrar-reserva
+  name: servicio-consultar-reserva
  datasource:
     database: ${MYSQL_DATABASE:db_springboot_cloud}
     host: ${MYSQL_HOST:localhost}
     port: ${MYSQL_PORT:3306}
     username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_ROOT_PASSWORD}
+    password: ${MYSQL_ROOT_PASSWORD:123456}
     url: jdbc:mysql://${spring.datasource.host}:${spring.datasource.port}/${spring.datasource.database}?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=America/Bogota
 
  jpa:
@@ -27,9 +27,8 @@ cloud:
     access-key: ${AWS_ACCESS_KEY_ID}
     secret-key: ${AWS_SECRET_ACCESS_KEY}
   end-point:
-     uri: ${SQS_ENDPOINT}
+     uri: ${SQS_ENDPOINT} 
      
 eureka:
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}} 
-   
+ instance:
+   instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}  
